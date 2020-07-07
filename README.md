@@ -35,7 +35,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/). -->
 
 - 课程安排
   - 第1章准备工作
-  - 第2一6章实战开发
+  - 第2-6章实战开发
   - 第7章create一api原理介绍
   - 第8章项目打包和部署
 - 讲授方式
@@ -78,3 +78,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/). -->
 - vw **NO**
 
 ### 2-3 api 接口 mock
+
+在vue.config.js
