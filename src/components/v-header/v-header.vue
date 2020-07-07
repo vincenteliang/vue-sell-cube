@@ -47,6 +47,7 @@
       }
     },
     methods: {
+      // 点击显示
       showDetail() {
         this.headerDetailComp = this.headerDetailComp || this.$createHeaderDetail({
           $props: {
