@@ -79,4 +79,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/). -->
 
 ### 2-3 api 接口 mock
 
-在vue.config.js
+[vue.config.js](https://github.com/vincenteliang/vue-sell-cube/commit/441a7f82b88ba7261388d7b73cd29bc608e26b1b#diff-0e893b3578ae3d5c8b98bac1c80756a7)
+
