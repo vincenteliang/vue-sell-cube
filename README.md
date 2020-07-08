@@ -1,28 +1,3 @@
-<!-- # vue-sell-cube
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/). -->
-
 # Vue.js2.5+cube-ui重构饿了么App
 
 > https://coding.imooc.com/class/74.html
@@ -79,5 +54,34 @@ See [Configuration Reference](https://cli.vuejs.org/config/). -->
 
 ### 2-3 api 接口 mock
 
-[vue.config.js](https://github.com/vincenteliang/vue-sell-cube/commit/441a7f82b88ba7261388d7b73cd29bc608e26b1b#diff-0e893b3578ae3d5c8b98bac1c80756a7)
+> https://github.com/vincenteliang/vue-sell-cube/commit/441a7f82b88ba7261388d7b73cd29bc608e26b1b#diff-0e893b3578ae3d5c8b98bac1c80756a7
+
+vue.config.js
+
+## 第3章 头部组件开发
+
+> 包括 Header组件编写，axios 封装和数据交互、star 组件抽象封装和 HeaderDetail 组件的编写和交互。
+
+### 3-1 目录结构 & header 组件
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/347bd6fd4c6306b2a05373774ce2ccbf12876343
+
+### 3-2 axios 封装 & 数据获取
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/ee9fce141b8a15aaf0736f1ea27be4417d52ca59
+
+[axios 官网](https://github.com/axios/axios)
+
+`npm i axios --save`
+
+### 3-3 header-detail & star 组件
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/3e4fee3bbd683cd161b1b8725f9d408992d6062c
+
+### 3-4 header-detail 交互
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/3aec844e98084591a0cdb4231e4be5f2bd094939
+
+全屏弹窗最好写在body下，避免fixed布局中transform的影响，利用cube-ui的create-api模块来实现
+
 
