@@ -40,5 +40,12 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+  #app
+    .tab-wrapper
+      position: fixed
+      top: 136px
+      left: 0
+      right: 0
+      bottom: 0
 </style>
