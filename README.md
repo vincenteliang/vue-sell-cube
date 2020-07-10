@@ -84,4 +84,18 @@ vue.config.js
 
 全屏弹窗最好写在body下，避免fixed布局中transform的影响，利用cube-ui的create-api模块来实现
 
+## 第4章 Tab 组件开发
 
+> 包括 Tab 组件的基础实现、上下联动实现、组件更高维度的抽象和封装。
+
+### 4-1 tab 组件基础实现
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/f44efa39050951107aa61a50379df948de378a8e
+
+### 4-2 tab 组件上下联动
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/0d5a9265c19656cae9a64dce9bd91e0685c4170e
+
+### 4-3 tab 组件抽象和封装
+
+> https://github.com/vincenteliang/vue-sell-cube/commit/56b2017c99951d92c74bd5f0fb7b2560f8e1d021
