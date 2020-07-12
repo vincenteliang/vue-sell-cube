@@ -33,7 +33,7 @@
                   <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cart-control-wrapper">
-                  <cart-control :food="food"></cart-control>
+                  <cart-control @add="onAdd" :food="food"></cart-control>
                 </div>
               </div>
             </li>
@@ -43,6 +43,7 @@
     </div>
     <div class="shop-cart-wrapper">
       <shop-cart
+        ref="shopCart"
         :select-foods="selectFoods"
         :delivery-price="seller.deliveryPrice"
         :min-price="seller.minPrice"></shop-cart>
@@ -95,6 +96,9 @@
         getGoods().then((goods) => {
           this.goods = goods
         })
+      },
+      onAdd(el) {
+        this.$refs.shopCart.drop(el)
       }
     },
     components: {
