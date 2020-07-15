@@ -10,11 +10,12 @@
     >
       <transition
         name="move"
+        @after-leave="afterLeave"
       >
         <div v-show="visible">
           <div class="list-header">
             <h1 class="title">购物车</h1>
-            <span class="empty">清空</span>
+            <span class="empty" @click="empty">清空</span>
           </div>
           <cube-scroll class="list-content" ref="listContent">
             <ul>
@@ -28,7 +29,7 @@
                   <span>￥{{food.price*food.count}}</span>
                 </div>
                 <div class="cart-control-wrapper">
-                  <cart-control :food="food"></cart-control>
+                  <cart-control @add="onAdd" :food="food"></cart-control>
                 </div>
               </li>
             </ul>
@@ -41,11 +42,15 @@
 
 <script>
   import CartControl from 'components/cart-control/cart-control'
+  import popupMixin from 'common/mixins/popup'
 
-  const EVENT_HIDE = 'hide'
+  const EVENT_SHOW = 'show'
+  const EVENT_ADD = 'add'
+  const EVENT_LEAVE = 'leave'
 
   export default {
     name: 'shop-cart-list',
+    mixins: [popupMixin],
     props: {
       selectFoods: {
         type: Array,
@@ -54,21 +59,37 @@
         }
       }
     },
-    data() {
-      return {
-        visible: false
-      }
+    created() {
+      this.$on(EVENT_SHOW, () => {
+        this.$nextTick(() => {
+          this.$refs.listContent.refresh()
+        })
+      })
     },
     methods: {
-      show() {
-        this.visible = true
+      onAdd(target) {
+        this.$emit(EVENT_ADD, target)
       },
-      hide() {
-        this.visible = false
-        this.$emit(EVENT_HIDE)
+      afterLeave() {
+        this.$emit(EVENT_LEAVE)
       },
       maskClick() {
         this.hide()
+      },
+      empty() {
+        this.dialogComp = this.$createDialog({
+          type: 'confirm',
+          content: '清空购物车？',
+          $events: {
+            confirm: () => {
+              this.selectFoods.forEach((food) => {
+                food.count = 0
+              })
+              this.hide()
+            }
+          }
+        })
+        this.dialogComp.show()
       }
     },
     components: {
