@@ -16,6 +16,7 @@ module.exports = {
     'space-before-function-paren': 0,
     'indent': 0,
     'object-curly-spacing': 0,
-    'quotes': 0
+    'quotes': 0,
+    'semi': 0
   }
 }
